@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Jan 16 19:38:12 2023
-
-@author: Martin
-"""
 
 import nltk
 from nltk.stem import WordNetLemmatizer
