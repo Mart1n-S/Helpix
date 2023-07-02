@@ -1,3 +1,4 @@
+<h1 align="center">Helpix</h1>
 # Prérequis pour le chatbot
 
 Avant de pouvoir exécuter le chatbot, assurez-vous de disposer des éléments suivants :
