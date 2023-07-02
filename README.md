@@ -17,12 +17,13 @@ Si Python n'est pas installé, veuillez vous rendre sur le site officiel de Pyth
 
 Le chatbot utilise plusieurs bibliothèques Python. Vous pouvez les installer en utilisant la commande `pip install` dans votre terminal. Voici les bibliothèques requises :
 
-> pip install tensorflow
-> pip install keras
-> pip install pickle
-> pip install nltk
-> pip install flask
-
+```
+pip install tensorflow
+pip install keras
+pip install pickle
+pip install nltk
+pip install flask
+```
 
 Assurez-vous d'exécuter ces commandes une fois que Python est installé sur votre système.
 
