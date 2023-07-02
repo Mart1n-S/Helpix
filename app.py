@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Jan 16 19:37:51 2023
-
-@author: Martin
-"""
 
 import nltk
 nltk.download('popular')
