@@ -11,8 +11,9 @@ Avant de pouvoir exécuter le chatbot, assurez-vous de disposer des éléments s
 
 Assurez-vous d'avoir Python installé sur votre système. Vous pouvez vérifier cela en exécutant la commande suivante dans votre terminal :
 
+```
 python --version
-
+```
 
 Si Python n'est pas installé, veuillez vous rendre sur le site officiel de Python (https://www.python.org) pour télécharger et installer la dernière version.
 
