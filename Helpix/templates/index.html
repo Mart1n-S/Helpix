@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/style.css') }}"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0"
+    />
+
+    <title>Helpix</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <!-- partial:index.partial.html -->
+    <section class="messengerBox">
+      <header class="messengerBoxHeader">
+        <div class="messengerBoxHeaderTitle">
+          Helpix <span class="material-symbols-rounded">headset_mic</span>
+        </div>
+      </header>
+
+      <main class="messenger">
+        <div class="message leftMessage">
+          <div class="messageImage"></div>
+
+          <div class="messageBubble">
+            <div class="messageInfo">
+              <div class="messageInfoName">Helpix</div>
+              <div class="messageInfoTime" id="time"></div>
+            </div>
+
+            <div class="messageText">
+              Bonjour et bienvenue sur Helpix, le ChatBot qui est là pour vous
+              aider! Écriver moi un message. 😄
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <form class="messageInputArea">
+        <input
+          type="text"
+          class="messageInput"
+          id="textInput"
+          placeholder="Entrer votre message..."
+          autocomplete="off"
+        />
+
+        <button type="submit" class="buttonSendMessage">
+          <span class="material-symbols-rounded">send</span>
+        </button>
+      </form>
+    </section>
+    <!-- partial -->
+    <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+    <script>
+      const msgerForm = get(".messageInputArea");
+      const msgerInput = get(".messageInput");
+      const msgerChat = get(".messenger");
+
+      // Icons made by Freepik from www.flaticon.com
+      const BOT_IMG = "https://cdn-icons-png.flaticon.com/512/4233/4233830.png";
+      const PERSON_IMG =
+        "https://cdn-icons-png.flaticon.com/512/3541/3541871.png";
+      const BOT_NAME = "    Helpix";
+      const PERSON_NAME = "You";
+
+      msgerForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const msgText = msgerInput.value;
+        if (!msgText) return;
+
+        appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+        msgerInput.value = "";
+        botResponse(msgText);
+      });
+
+      function appendMessage(name, img, side, text) {
+        //   Simple solution for small apps
+        const msgHTML = `
+<div class="message ${side}Message">
+  <div class="messageImage" style="background-image: url(${img})"></div>
+
+  <div class="messageBubble">
+    <div class="messageInfo">
+      <div class="messageInfoName">${name}</div>
+      <div class="messageInfoTime">${formatDate(new Date())}</div>
+    </div>
+
+    <div class="messageText">${text}</div>
+  </div>
+</div>
+`;
+
+        msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+        msgerChat.scrollTop += 500;
+      }
+
+      function botResponse(rawText) {
+        // Bot Response
+        $.get("/get", { message: rawText }).done(function (data) {
+          console.log(rawText);
+          console.log(data);
+          const msgText = data;
+          appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+        });
+      }
+
+      // Utils
+      function get(selector, root = document) {
+        return root.querySelector(selector);
+      }
+
+      function formatDate(date) {
+        const h = "0" + date.getHours();
+        const m = "0" + date.getMinutes();
+
+        return `${h.slice(-2)}:${m.slice(-2)}`;
+      }
+
+      function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        m = checkTime(m);
+        document.getElementById("time").innerHTML = h + ":" + m;
+        var t = setTimeout(startTime, 500);
+      }
+      function checkTime(i) {
+        if (i < 10) {
+          i = "0" + i;
+        } // add zero in front of numbers < 10
+        return i;
+      }
+
+      startTime();
+    </script>
+  </body>
+</html>
