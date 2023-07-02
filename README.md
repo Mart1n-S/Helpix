@@ -1,5 +1,8 @@
 <h1 align="center">Helpix</h1>
 
+## 📸 User Interface
+![vue chatbot](./.github/assets/chat1.png)![vue chatbot 2](./.github/assets/chat2.png)![vue chatbot 3](./.github/assets/chat3.png)
+
 ## Prérequis pour le chatbot
 
 Avant de pouvoir exécuter le chatbot, assurez-vous de disposer des éléments suivants :
@@ -19,9 +22,13 @@ Le chatbot utilise plusieurs bibliothèques Python. Vous pouvez les installer en
 
 ```
 pip install tensorflow
+
 pip install keras
+
 pip install pickle
+
 pip install nltk
+
 pip install flask
 ```
 
