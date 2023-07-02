@@ -2,7 +2,7 @@
 """
 Created on Mon Jan 16 19:38:12 2023
 
-@author: Pierre
+@author: Martin
 """
 
 import nltk
