@@ -2,7 +2,7 @@
 
 ## 📸 User Interface
 ![vue chatbot](./assets/chatbot1.png)![vue chatbot 2](./assets/chatbot2.png)![vue chatbot 3](./assets/chatbot3.png)![vue chatbot 4](./assets/chatbot4.png)
-<img src="./assets/helpixMob1.png" widht="80" alt="Vue chatbot 1">
+<img src="./assets/helpixMob1.png" height="80" alt="Vue chatbot 1">
 
 ## Prérequis pour le chatbot
 
