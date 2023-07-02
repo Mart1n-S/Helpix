@@ -1,7 +1,7 @@
 <h1 align="center">Helpix</h1>
 
 ## 📸 User Interface
-![vue chatbot](./.github/assets/chat1.png)![vue chatbot 2](./.github/assets/chat2.png)![vue chatbot 3](./.github/assets/chat3.png)
+![vue chatbot](./.github/assets/chat1.png)![vue chatbot 2](./.github/assets/chat2.png)![vue chatbot 3](./.github/assets/chat3.png)![vue chatbot 4](./.github/assets/chat4.png)
 
 ## Prérequis pour le chatbot
 
